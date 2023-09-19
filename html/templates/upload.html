@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Screen</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        background-image: url('your-background-image.jpg'); /* 替换为您的背景图像路径 */
+        background-size: cover; /* 覆盖整个屏幕 */
+        background-repeat: no-repeat; /* 不重复 */
+        background-attachment: fixed; /* 固定背景，防止滚动时背景移动 */
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: auto; /* 設定高度為 "auto" */
+            width: auto;
+            background-color: #f0f0f0;
+        }
+        .header {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+            background-color: #f0f0f0;
+        }
+        .input {
+            width: 30%;
+            height: 30%;
+            border: 3px solid #4682B4;
+            background-color: #FFFFFF;
+            margin: 5px 0;
+            padding: 10px;
+            color: black;
+            border-radius: 15px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .select {
+            width: 32%;
+            height: 30%;
+            border: 3px solid #4682B4;
+            background-color: #FFFFFF;
+            margin: 5px 0;
+            padding: 10px;
+            color: black;
+            border-radius: 15px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .button {
+            width: 20%;
+            height: 40px;
+            border: none;
+            border-radius: 50px;
+            background-color: #8b4513;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="style.css">-->
+</head>
+<body>
+    <div>
+        <div class="header">
+            <h1>請填寫您的基本資料</h1>
+        </div>
+        <form class="container" method="POST" action="/process_form"> <!-- 表单开始，指定提交方法和处理路由 -->
+            <div class="questionText">請輸入您的E-mail</div>
+            <input class="input" type="text" id="mailInput" name="mail" placeholder="請輸入您的E-mail">
+            
+
+            <div class="questionText">請輸入您的年齡</div>
+            <input class="input" type="text" id="ageInput" name="age" placeholder="請輸入您的年齡">
+            
+            <div class="questionText">請選擇您的性別:</div>
+            <select class="select" id="genderSelect" name="gender">
+                <option value=""> </option> <!-- 空選項，不顯示預設值 -->
+                <option value="男性(male)">男性(male)</option>
+                <option value="女性(female)">女性(female)</option>
+            </select>
+            <div class="questionText">請輸入您的身高(cm)</div>
+            <input class="input" type="text" id="heightInput" name="height" placeholder="請輸入您的身高(cm)">
+            <div class="questionText">請輸入您的體重(kg)</div>
+            <input class="input" type="text" id="weightInput" name="weight" placeholder="請輸入您的體重(kg)">
+            
+            <div class="questionText">請問您每周的運動頻率:</div>
+            <select class="select" id="exerciseSelect" name="exercise">
+                <option value=""> </option> <!-- 空選項，不顯示預設值 -->
+                <option value="幾乎不運動">幾乎不運動</option>
+                <option value="一到兩次">一到兩次</option>
+                <option value="三到五次">三到五次</option>
+                <option value="每周五次以上">每周五次以上</option>
+            </select>
+            
+            <div class="questionText">請問您是否有特殊飲食需求?</div>
+            <select class="select" id="dietaryNeedsSelect" name="dietaryNeeds">
+                <option value=""> </option> <!-- 空選項，不顯示預設值 -->
+                <option value="正常飲食">正常飲食</option>
+                <option value="減脂">減脂</option>
+                <option value="增肌">增肌</option>
+                <option value="特殊糖尿病飲食需求">特殊糖尿病飲食需求</option>
+            </select>
+            
+            <div class="questionText">請問您是否有宗教飲食需求?</div>
+            <select class="select" id="religionSelect" name="religion">
+                <option value=""> </option> <!-- 空選項，不顯示預設值 -->
+                <option value="無">無</option>
+                <option value="不吃豬肉">不吃豬肉</option>
+                <option value="不吃牛肉">不吃牛肉</option>
+                <option value="不吃海鮮">不吃海鮮</option>
+            </select>
+            <button class="button" type="submit" name="action" value="download">下載 JSON</button>
+            <button class="button" type="submit" name="action" value="upload">上傳到資料庫</button>
+
+        </form>
+        
+        
+
+        
+
+    </div>
+
+</body>
+</html>
